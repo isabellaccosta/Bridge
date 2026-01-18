@@ -245,6 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateProgress();
 });
+
 /* ================= RESETAR PROGRESSO ================= */
 
 const resetBtn = document.getElementById('resetProgress');
@@ -276,5 +277,6 @@ if (resetBtn) {
         document.getElementById('trilhas').scrollIntoView({
             behavior: 'smooth'
         });
+        
     });
 }

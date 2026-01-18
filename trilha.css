@@ -437,26 +437,88 @@ nav a {
     background: #3971b8;
     color: #fff;
 }
-/* ================= RESET PROGRESSO ================= */
+/* =========================
+   HEADER + HAMBURGER
+========================= */
 
-.reset-progress {
-    margin-top: 18px;
-    background: transparent;
-    border: 2px dashed #3971b8;
-    color: #3971b8;
-    padding: 10px 22px;
-    border-radius: 25px;
-    font-weight: 600;
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: relative;
+}
+
+/* NAV */
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+/* HAMBURGER */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
     cursor: pointer;
-    transition: all .3s ease;
 }
 
-.reset-progress:hover {
-    background: #3971b8;
-    color: #fff;
-    transform: scale(1.05);
+.hamburger span {
+    width: 26px;
+    height: 2px;
+    background: #000;
+    transition: 0.3s;
 }
 
-.reset-progress:active {
-    transform: scale(0.96);
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .nav {
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        background: #fff;
+        border-radius: 16px;
+        padding: 25px;
+        flex-direction: column;
+        gap: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: 0.3s;
+        z-index: 1000;
+    }
+
+    .nav.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .hamburger {
+        display: flex;
+    }
 }
+
+/* =========================
+   ANIMAÇÃO HAMBURGER
+========================= */
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+
