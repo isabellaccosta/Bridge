@@ -34,3 +34,13 @@ document.addEventListener('mousemove', (e) => {
     document.querySelector('.p1').style.transform = `rotate(15deg) translate(${x}px, ${y}px)`;
     document.querySelector('.p2').style.transform = `rotate(-10deg) translate(${-x}px, ${-y}px)`;
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    if (!hamburger || !navLinks) return;
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+});
