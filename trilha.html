@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bridge - Minha Trilha</title>
+    <title>Lupa - Minha Trilha</title>
     <link rel="stylesheet" href="trilha.css">
     <link rel="icon" type="image/png" href="imagens/isologo.png">
 </head>
@@ -148,6 +148,29 @@
             </button>
         </div>
 
+    </div>
+</div>
+
+<!-- ================= CHATBOT AND CHATBOX ================= -->
+
+<button class="open-button" onclick="toggleChat()"> <img src="imagens/lupi.png" alt="Mascote Lupi"> </img> </button>
+
+<div class="chat-popup" id="chatForm">
+    <div class="form-container">
+        <h3>Lupi</h3>
+        
+        <div class="chat-history" id="chatHistory">
+            <div class="message bot-msg">Olá! Como posso ajudar?</div>
+        </div>
+
+        <!-- Mensagens prontas -->
+        <div class="quick-replies">
+            <button class="reply-btn" onclick="sendPredefined('Contato')">Contato</button>
+            <button class="reply-btn" onclick="sendPredefined('Redes sociais')">Redes sociais</button>
+            <button class="reply-btn" onclick="sendPredefined('Quem somos nós?')">Quem somos nós</button>
+        </div>
+
+        <button type="button" class="btn-close" onclick="toggleChat()">Fechar</button>
     </div>
 </div>
 

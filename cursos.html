@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos Pro - Grid System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@1,700&family=Montserrat:wght@300;400;600&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cursos.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-text">CURSOS.PRO</div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#">Categorias</a></li>
+                <li><a href="#">Certificados</a></li>
+                <button class="btn-nav">Entrar</button>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="badge-main">
+            <h1 class="logo-title">Plataforma</h1>
+            <p class="logo-subtitle">Educação organizada em colunas</p>
+        </div>
+    </header>
+
+    <section class="filter-section">
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="design">Design</button>
+            <button class="filter-btn" data-filter="programacao">Programação</button>
+            <button class="filter-btn" data-filter="marketing">Marketing</button>
+        </div>
+    </section>
+
+    <main class="content-wrapper">
+        <div class="course-grid" id="course-grid">
+            <div class="course-card polaroid" data-category="design">
+                <span class="ribbon-tag">Novo</span>
+                <img src="https://images.unsplash.com/photo-1586717791821-3f44a563de4c?q=80&w=400" alt="Design">
+                <div class="card-body">
+                    <h3>UI/UX Design</h3>
+                    <p>Aprenda interfaces modernas.</p>
+                    <a href="#" class="link">Acessar Curso</a>
+                </div>
+            </div>
+
+            <div class="course-card polaroid" data-category="programacao">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=400" alt="Dev">
+                <div class="card-body">
+                    <h3>Web Dev</h3>
+                    <p>HTML, CSS e JavaScript.</p>
+                    <a href="#" class="link">Acessar Curso</a>
+                </div>
+            </div>
+
+            <div class="course-card polaroid" data-category="marketing">
+                <img src="https://images.unsplash.com/photo-1533750516457-a7f992034fce?q=80&w=400" alt="Mkt">
+                <div class="card-body">
+                    <h3>Ads & Sales</h3>
+                    <p>Tráfego pago avançado.</p>
+                    <a href="#" class="link">Acessar Curso</a>
+                </div>
+            </div>
+
+            </div>
+    </main>
+
+    <script src="cursos.js"></script>
+</body>
+</html>

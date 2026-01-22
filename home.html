@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bridge</title>
+  <title>Rede Lupa</title>
 
   <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
@@ -41,6 +41,10 @@
       <a href="contprat.html">Conteúdos Práticos</a>
       <a href="sobre.html">Nosso Projeto</a>
       <a href="tcs.html">A TCS</a>
+      <a href="cursos.html">Cursos</a>
+      <a href="lidertcs.html">Seja um TCS</a>
+
+
     </nav>
 
     <!-- PROFILE -->
@@ -158,6 +162,30 @@
 
   </footer>
 
+</div>
+
+
+<!-- ================= CHATBOT AND CHATBOX ================= -->
+
+<button class="open-button" onclick="toggleChat()"> <img src="imagens/lupi.png" alt="Mascote Lupi"> </img> </button>
+
+<div class="chat-popup" id="chatForm">
+    <div class="form-container">
+        <h3>Lupi</h3>
+        
+        <div class="chat-history" id="chatHistory">
+            <div class="message bot-msg">Olá! Como posso ajudar?</div>
+        </div>
+
+        <!-- Mensagens prontas -->
+        <div class="quick-replies">
+            <button class="reply-btn" onclick="sendPredefined('Contato')">Contato</button>
+            <button class="reply-btn" onclick="sendPredefined('Redes sociais')">Redes sociais</button>
+            <button class="reply-btn" onclick="sendPredefined('Quem somos nós?')">Quem somos nós</button>
+        </div>
+
+        <button type="button" class="btn-close" onclick="toggleChat()">Fechar</button>
+    </div>
 </div>
 
 <!-- JS -->
