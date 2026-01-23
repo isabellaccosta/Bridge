@@ -1,77 +1,116 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cursos Pro - Grid System</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@1,700&family=Montserrat:wght@300;400;600&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="cursos.css">
+<meta charset="UTF-8">
+<title>Lupa - Cursos</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="cursos.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="imagens/isologo.png">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo-text">CURSOS.PRO</div>
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#">Categorias</a></li>
-                <li><a href="#">Certificados</a></li>
-                <button class="btn-nav">Entrar</button>
-            </ul>
-        </div>
-    </nav>
+<header class="navbar">
 
-    <header class="hero">
-        <div class="badge-main">
-            <h1 class="logo-title">Plataforma</h1>
-            <p class="logo-subtitle">Educação organizada em colunas</p>
-        </div>
-    </header>
+    <div class="logo">
+      <img src="imagens/logobridge.png" alt="Bridge">
+    </div>
 
-    <section class="filter-section">
-        <div class="filter-container">
-            <button class="filter-btn active" data-filter="all">Todos</button>
-            <button class="filter-btn" data-filter="design">Design</button>
-            <button class="filter-btn" data-filter="programacao">Programação</button>
-            <button class="filter-btn" data-filter="marketing">Marketing</button>
-        </div>
-    </section>
+  <nav class="nav" id="nav">
+     <a href="home.html"><strong>Início</strong></a>
+      <a href="trilha.html"><strong>Trilha Guiada</strong></a>
+      <a href="contprat.html"><strong>Conteúdos Práticos</strong></a>
+      <a href="sobre.html"><strong>Nosso Projeto</strong></a>
+      <a href="tcs.html"><strong>A TCS</strong></a>
+      <a href="cursos.html"><strong>Cursos</strong></a>
+      <a href="lidertcs.html"><strong>Seja um TCS</strong></a>
+  </nav>
 
-    <main class="content-wrapper">
-        <div class="course-grid" id="course-grid">
-            <div class="course-card polaroid" data-category="design">
-                <span class="ribbon-tag">Novo</span>
-                <img src="https://images.unsplash.com/photo-1586717791821-3f44a563de4c?q=80&w=400" alt="Design">
-                <div class="card-body">
-                    <h3>UI/UX Design</h3>
-                    <p>Aprenda interfaces modernas.</p>
-                    <a href="#" class="link">Acessar Curso</a>
-                </div>
-            </div>
+  <div class="hamburger" id="hamburger">
+    ☰
+  </div>
+</header>
 
-            <div class="course-card polaroid" data-category="programacao">
-                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=400" alt="Dev">
-                <div class="card-body">
-                    <h3>Web Dev</h3>
-                    <p>HTML, CSS e JavaScript.</p>
-                    <a href="#" class="link">Acessar Curso</a>
-                </div>
-            </div>
+<section class="hero">
+  <div class="hero-card">
+    <h1>Os cursos</h1>
+    <p>Conheça alguns cursos que oferecemos da <br>melhor qualidade possível!</p>
+    <button><strong>Começar agora</strong></button>
+  </div>
+</section>
 
-            <div class="course-card polaroid" data-category="marketing">
-                <img src="https://images.unsplash.com/photo-1533750516457-a7f992034fce?q=80&w=400" alt="Mkt">
-                <div class="card-body">
-                    <h3>Ads & Sales</h3>
-                    <p>Tráfego pago avançado.</p>
-                    <a href="#" class="link">Acessar Curso</a>
-                </div>
-            </div>
+<section class="scrapbook">
+  <div class="scrap-bg">
 
-            </div>
-    </main>
+    <div class="polaroid p1">
+      <img src="imagens/cursocd3.jpg">
+      <span>Economia Moderna</span>
+      <div class="likes">❤️ 120 💬 34</div>
+    </div>
 
-    <script src="cursos.js"></script>
+    <div class="polaroid p2">
+      <img src="imagens/cursocd2.jpg">
+      <span>UX/UI Design</span>
+      <div class="likes">❤️ 89 💬 22</div>
+    </div>
+
+    <div class="star"></div>
+    <div class="ribbon"></div>
+    <div class="arrow a1"></div>
+    <div class="arrow a2"></div>
+
+  </div>
+</section>
+
+<section class="controls">
+  <input type="text" id="searchInput" placeholder="Buscar curso pelo nome...">
+  <select id="areaFilter">
+    <option value="all">Todas as áreas</option>
+    <option value="economia">Economia</option>
+    <option value="direito">Direito</option>
+    <option value="tecnologia">Tecnologia</option>
+    <option value="design">Design</option>
+    <option value="administracao">Administração</option>
+  </select>
+</section>
+
+<section class="courses-container" id="coursesContainer"></section>
+
+<section class="info-board">
+  <h2>Queremos te ajudar</h2>
+  <p>
+    Nossa missão é te ajudar a transformar conhecimento em carreira.
+    Criamos trilhas reais, links diretos para plataformas confiáveis
+    e uma curadoria profissional para acelerar sua vida.
+  </p>
+
+  <ul>
+    <li>+ Milhões de visualizações</li>
+    <li>+ Milhares de alunos</li>
+    <li>+ Projetos reais</li>
+    <li>+ Monetização com conteúdo</li>
+  </ul>
+
+  <div class="stat">
+    <strong>Queremos</strong>
+  </div>
+</section>
+
+<footer>
+  © 2026 Rede Lupa
+</footer>
+<!-- VLibras -->
+<div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+    </div>
+</div>
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+<script src="cursos.js"></script>
 </body>
 </html>

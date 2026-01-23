@@ -1,128 +1,291 @@
-/* --- CONFIGURAÇÕES DE LAYOUT --- */
 :root {
-    --blue: #6189b8;
-    --paper: #f1ede3;
-    --white: #ffffff;
-    --dark: #1a1a1a;
-    --shadow: 0 10px 30px rgba(0,0,0,0.08);
+  --blue:#6f8fb3;
+  --cream:#f6e6a5;
+  --pink:#f0b9c6;
+  --red:#c95c5c;
+  --text:#2c2c2c;
+  --shadow:0 10px 25px rgba(236, 187, 26, 0.12);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Montserrat', sans-serif; background-color: var(--paper); color: var(--dark); }
+* { box-sizing:border-box; }
 
-/* --- GRID DE COLUNAS PRINCIPAL --- */
-.content-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 50px 20px;
+body {
+  margin:0;
+  background:#f6e6a5;
+  font-family:'Inter',sans-serif;
+  color:var(--text);
+  overflow-x:hidden;
 }
 
-.course-grid {
-    display: grid;
-    /* Define 3 colunas em desktops, 2 em tablets e 1 em mobile */
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 30px;
-    align-items: start;
+/* HEADER */
+
+.header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
+  backdrop-filter:blur(8px);
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:var(--shadow);
+  background: #f6e6a5;
+  color: #3971b8;
 }
 
-/* --- ESTILO POLAROID (COLUNA) --- */
+.nav {
+  display:flex;
+  gap:30px;
+}
+
+.nav a {
+  background:#f6e6a5;
+  padding:7px 16px;
+  border-radius:20px;
+  font-size:13px;
+  text-decoration:none;
+  color:#3971b8;
+  transition:.3s;
+}
+
+.nav a:hover {
+  transform:translateY(-3px);
+  box-shadow:var(--shadow);
+}
+
+.hamburger {
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.hamburger:hover { transform:scale(1.1); }
+
+/* HERO */
+
+.hero {
+  height:65vh;
+  background:url("imagens/fundocurso.PNG") center/cover;
+  position:relative;
+}
+
+.hero::after {
+  content:"";
+  position:absolute;
+  inset:0;
+}
+
+.hero-card {
+  position:absolute;
+  bottom:40px;
+  left:40px;
+  background:#3971b8;
+  padding:34px;
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  animation:fadeUp .9s ease;
+  color: #f6e6a5;
+}
+
+.hero-card h1 {
+  font-family:'Playfair Display',serif;
+  font-size:44px;
+}
+
+.hero-card button {
+  margin-top:12px;
+  padding:12px 22px;
+  background:#c8d69b;
+  color:#343b1b;
+  border:none;
+  border-radius:14px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.hero-card button:hover {
+  transform:translateY(-4px);
+  box-shadow:var(--shadow);
+}
+
+/* SCRAPBOOK */
+
+.scrapbook { padding:50px; }
+
+.scrap-bg {
+  background:#c8d69b;
+  border-radius:28px;
+  padding:50px;
+  position:relative;
+  min-height:360px;
+  box-shadow:var(--shadow);
+}
+
+.polaroid {
+  background:white;
+  padding:12px;
+  border-radius:14px;
+  width:210px;
+  position:absolute;
+  box-shadow:var(--shadow);
+  animation:float 6s ease-in-out infinite;
+}
+
+.polaroid img {
+  width:100%;
+  border-radius:10px;
+}
+
+.polaroid span {
+  display:block;
+  text-align:center;
+  margin-top:8px;
+  font-size:13px;
+}
+
+.likes {
+  margin-top:6px;
+  font-size:12px;
+  text-align:center;
+  opacity:.7;
+}
+
+.p1 { left:80px; top:70px; transform:rotate(-4deg); animation-delay:0s; }
+.p2 { right:120px; top:100px; transform:rotate(3deg); animation-delay:2s; }
+
+/* CONTROLS */
+
+.controls {
+  display:flex;
+  gap:15px;
+  padding:35px;
+  justify-content:center;
+}
+
+.controls input,
+.controls select {
+  padding:12px 18px;
+  border-radius:14px;
+  border:1px solid #ccc;
+  transition:.3s;
+}
+
+.controls input:focus,
+.controls select:focus {
+  outline:none;
+  box-shadow:0 0 0 3px rgba(111,143,179,.3);
+}
+
+/* COURSES */
+
+.courses-container {
+  padding:40px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+
 .course-card {
-    background: var(--white);
-    padding: 15px 15px 30px 15px;
-    box-shadow: var(--shadow);
-    transition: transform 0.3s ease, opacity 0.4s ease;
-    position: relative;
-    /* Efeito de rotação aleatória para manter o estilo scrapbook */
+  background:white;
+  border-radius:22px;
+  padding:24px;
+  border:1px solid #eee;
+  box-shadow:var(--shadow);
+  opacity:0;
+  transform:translateY(30px);
+  animation:fadeUp .7s ease forwards;
+  transition:.4s;
 }
-
-.course-card:nth-child(odd) { transform: rotate(-2deg); }
-.course-card:nth-child(even) { transform: rotate(2deg); }
 
 .course-card:hover {
-    transform: rotate(0deg) translateY(-10px);
-    z-index: 10;
+  transform:translateY(-8px) scale(1.02);
 }
 
-.course-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-bottom: 1px solid #eee;
+.course-icon { font-size:32px; }
+
+.course-card h3 {
+  font-family:'Playfair Display',serif;
 }
 
-.card-body {
-    padding: 20px 0 10px;
-    text-align: center;
+.course-card a {
+  color:var(--red);
+  text-decoration:none;
+  font-weight:600;
 }
 
-.card-body h3 {
-    font-family: 'Bodoni Moda', serif;
-    font-size: 24px;
-    margin-bottom: 10px;
+/* INFO */
+
+.info-board {
+  background:#3971b8;
+  color:#f6e6a5;
+  padding:50px;
+  border-radius:30px 30px 0 0;
 }
 
-.card-body p {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 15px;
+.stat {
+  margin-top:20px;
+  background:#f6e6a5;
+  color:#3971b8;
+  padding:18px;
+  border-radius:18px;
+  width:220px;
+  font-size:22px;
+  font-weight:700;
 }
 
-.link {
-    font-family: 'Caveat', cursive;
-    font-size: 20px;
-    color: var(--blue);
-    text-decoration: none;
-    font-weight: bold;
+/* FOOTER */
+
+footer {
+  padding:22px;
+  text-align:center;
+  background:#c8d69b;
+  color: 343b1b;
 }
 
-/* --- RESPONSIVIDADE EM COLUNAS --- */
-@media (max-width: 992px) {
-    .course-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
-    }
+/* ANIMAÇÕES */
+
+@keyframes fadeUp {
+  to { opacity:1; transform:translateY(0); }
 }
 
-@media (max-width: 600px) {
-    .course-grid {
-        grid-template-columns: 1fr; /* 1 coluna em celulares */
-    }
-    
-    .navbar {
-        padding: 15px;
-    }
+@keyframes float {
+  0%,100% { transform:translateY(0) rotate(-3deg); }
+  50% { transform:translateY(-14px) rotate(3deg); }
 }
 
-/* --- ELEMENTOS DE DECORAÇÃO --- */
-.ribbon-tag {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background: #e07a7a;
-    color: white;
-    padding: 5px 15px;
-    font-size: 12px;
-    transform: rotate(15deg);
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-}
+/* RESPONSIVO */
 
-/* Filtros */
-.filter-section {
-    padding: 30px 0;
-    text-align: center;
-}
+@media(max-width:768px) {
 
-.filter-btn {
-    border: 2px solid var(--dark);
-    background: transparent;
-    padding: 8px 25px;
-    margin: 5px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.3s;
-}
+  .nav {
+    position:fixed;
+    top:70px;
+    right:-100%;
+    background:white;
+    flex-direction:column;
+    padding:25px;
+    width:220px;
+    height:100vh;
+    transition:.4s;
+    box-shadow:var(--shadow);
+  }
 
-.filter-btn.active {
-    background: var(--dark);
-    color: white;
+  .nav.open { right:0; }
+
+  .hamburger { display:block; }
+
+  .hero-card {
+    left:20px;
+    right:20px;
+  }
+
+  .scrap-bg { min-height:480px; }
+
+  .p1 { left:30px; }
+  .p2 { right:30px; }
+
+}
+.logo img{
+  height:50px;
 }

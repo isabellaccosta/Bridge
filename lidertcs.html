@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lupa - Seja um TCS</title>
+
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="lidertcs.css">
+
+  <!-- ICON -->
+  <link rel="icon" type="image/png" href="imagens/isologo.png">
+
+  <!-- PWA (futuro) -->
+  <!-- <link rel="manifest" href="manifest.json"> -->
+</head>
+<body>
+
+<div class="frame">
+
+  <!-- ================= HEADER / APP BAR ================= -->
+  <header class="navbar">
+
+    <div class="logo">
+      <img src="imagens/logobridge.png" alt="Bridge">
+    </div>
+
+    <!-- HAMBURGER -->
+    <div class="menu-toggle" aria-label="Abrir menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- MENU -->
+    <nav>
+      <a href="trilha.html">Trilha Guiada</a>
+      <a href="contprat.html">Conteúdos Práticos</a>
+      <a href="sobre.html">Nosso Projeto</a>
+      <a href="tcs.html">A TCS</a>
+      <a href="cursos.html">Cursos</a>
+      <a href="lidertcs.html">Seja um TCS</a>
+
+
+    </nav>
+
+    <!-- PROFILE -->
+    <a href="https://www.insper.edu.br/pt/home" class="profile-link" aria-label="Meu Perfil">
+      <img src="imagens/iconraposa.png" alt="Perfil">
+    </a>
+
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+
+    <div class="hero-text">
+      <h1>AJUDE OUTRAS<br>PESSOAS</h1>
+      <p>
+        Acreditamos que talento existe em todos os lugares — mas oportunidade não.
+Por isso, estamos construindo uma comunidade de jovens que usam seu conhecimento, experiência e influência para transformar trajetórias reais.
+
+Aqui, você não só cresce profissionalmente.
+Você muda destinos.
+      </p>
+      <button onclick="window.location.href='trilha.html'">
+  <strong>SAIBA MAIS</strong>
+    </div>
+
+    <div class="hero-image">
+      <img src="imagens/aulacp7.jpeg" alt="Estudante planejando o futuro">
+    </div>
+
+  </section>
+
+  <!-- ================= TICKER ================= -->
+  <div class="ticker">
+ㅤㅤORIENTAÇÃO · PROPÓSITO · ESCOLHAS · CAMINHOS · ORIENTAÇÃO · PROPÓSITO · ESCOLHAS · CAMINHOS · ORIENTAÇÃO · PROPÓSITO · ESCOLHAS
+  </div>
+<section id="impact" class="impact-section" aria-labelledby="impact-title">
+  <div class="impact-container">
+
+    <div class="impact-text">
+      <span class="impact-eyebrow">Impacto Real</span>
+      <h2 id="impact-title">Vidas reais. Mudanças reais.</h2>
+
+      <p class="impact-description">
+        Todos os dias, jovens talentosos deixam de conquistar oportunidades por falta
+        de orientação, acesso à informação e apoio profissional.
+      </p>
+
+      <p class="impact-description">
+        Nossa rede conecta jovens mentores a jovens que precisam de ajuda para entrar
+        no mercado de trabalho, organizar sua vida financeira e construir um futuro
+        com mais dignidade.
+      </p>
+
+      <p class="impact-highlight">
+        Não é caridade.  
+        É transferência de oportunidade.
+      </p>
+
+      <button class="impact-cta">
+        Ver histórias reais
+      </button>
+    </div>
+
+    <div class="impact-stats">
+
+      <div class="stat-card">
+        <span class="stat-number" data-target="15000">Treinadores</span>
+
+      </div>
+
+      <div class="stat-card">
+        <span class="stat-number" data-target="3200">Capacitação</span>
+      </div>
+
+      <div class="stat-card">
+        <span class="stat-number" data-target="89">Social</span>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="mini-cards-section">
+  <div class="mini-cards-wrapper">
+
+    <div class="mini-card">
+      <h3 class="mini-card-title">Mentoria de Carreira</h3>
+      <p class="mini-card-text">
+        Acompanhe jovens em decisões profissionais, entrevistas e escolhas de curso.
+        Seja a referência que você gostaria de ter tido no início da sua jornada.
+      </p>
+    </div>
+
+    <div class="mini-card">
+      <h3 class="mini-card-title">Educação Financeira</h3>
+      <p class="mini-card-text">
+        Ensine noções básicas de orçamento, organização financeira e primeiros passos
+        em investimentos. Liberdade financeira começa com informação.
+      </p>
+    </div>
+
+    <div class="mini-card">
+      <h3 class="mini-card-title">Empregabilidade</h3>
+      <p class="mini-card-text">
+        Ajude jovens a construir currículos, perfis no LinkedIn e se preparar
+        para processos seletivos. Um bom direcionamento muda destinos.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="join" class="join">
+  <h2>Torne-se Mentor(a)</h2>
+  <p>
+    Preencha o formulário abaixo para entrar para nossa rede de mentores.
+    Nossa equipe analisará sua inscrição.
+  </p>
+
+  <form id="mentorForm" class="form" aria-label="Formulário de mentoria">
+    <input type="text" name="name" placeholder="Nome completo" required />
+    <input type="email" name="email" placeholder="E-mail" required />
+    <input type="number" name="age" placeholder="Idade" required />
+    <input type="text" name="location" placeholder="Cidade / País" required />
+    <input type="text" name="area" placeholder="Área de atuação ou estudo" required />
+
+    <textarea name="experience" placeholder="Experiência profissional (breve)" required></textarea>
+
+    <textarea name="motivation" placeholder="Por que você quer ser mentor(a)?" required></textarea>
+
+    <label class="checkbox-group">
+      <span>Em quais temas você pode ajudar?</span>
+      <div>
+        <label><input type="checkbox" name="topics" value="Carreira" /> Carreira</label>
+        <label><input type="checkbox" name="topics" value="Empregabilidade" /> Empregabilidade</label>
+        <label><input type="checkbox" name="topics" value="Educação Financeira" /> Educação Financeira</label>
+        <label><input type="checkbox" name="topics" value="Negócios" /> Negócios</label>
+        <label><input type="checkbox" name="topics" value="Outro" /> Outro</label>
+      </div>
+    </label>
+
+    <button type="submit" class="cta">Enviar inscrição</button>
+
+    <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+  </form>
+</section>
+
+  <!-- ================= FOOTER (FINAL SECTION) ================= -->
+  <footer class="footer">
+
+    <div class="footer-content">
+
+      <div class="footer-logo">
+        <img src="imagens/logobridge.png" alt="Bridge">
+        <p>Orientação para escolhas conscientes de futuro.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#">Documentação</a>
+        <a href="sobre.html">Nosso Projeto</a>
+        <a href="tcs.html">A TCS</a>
+        <a href="sobre.html">Equipe</a>
+        <a href="https://github.com/isabellaccosta/Bridge.com">GitHub</a>
+      </div>
+
+    </div>
+
+  </footer>
+
+</div>
+
+
+<!-- ================= CHATBOT AND CHATBOX ================= -->
+
+<button class="open-button" onclick="toggleChat()"> <img src="imagens/lupi.png" alt="Mascote Lupi"> </img> </button>
+
+<div class="chat-popup" id="chatForm">
+    <div class="form-container">
+        <h3>Lupi</h3>
+        
+        <div class="chat-history" id="chatHistory">
+            <div class="message bot-msg">Olá! Como posso ajudar?</div>
+        </div>
+
+        <!-- Mensagens prontas -->
+        <div class="quick-replies">
+            <button class="reply-btn" onclick="sendPredefined('Contato')">Contato</button>
+            <button class="reply-btn" onclick="sendPredefined('Redes sociais')">Redes sociais</button>
+            <button class="reply-btn" onclick="sendPredefined('Quem somos nós?')">Quem somos nós</button>
+        </div>
+
+        <button type="button" class="btn-close" onclick="toggleChat()">Fechar</button>
+    </div>
+</div>
+
+<!-- VLibras -->
+<div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+    </div>
+</div>
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+
+
+</body>
+</html>
